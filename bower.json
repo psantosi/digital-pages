@@ -1,0 +1,7 @@
+{
+  "name": "digital-pages",
+  "dependencies": {
+    "blueimp-md5": "bower-blueimp-md5#1.0.1",
+    "moment": "^2.18.1"
+  }
+}
