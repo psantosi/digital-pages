@@ -1,0 +1,34 @@
+<table class="tabela" cellspacing="0" cellpadding="5">
+    <thead>
+        <tr>
+            <th class="nome">Nome</th>
+            <th class="descricao">Descrição</th>
+            <th class="data">última atualização</th>
+        </tr>
+    </thead>
+    {{outlet}}
+    <tbody>
+        {{#each model.list.data.results as |char|}}
+            <tr>
+                <td class="nome">{{#link-to "lists.details" model.page char.id}}{{char.name}}{{/link-to}}</td>
+                <td class="descricao">{{char.description}}</td>
+                <td class="data">{{format-date char.modified}}</td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+<div class="pagination">
+    <p>
+        {{#link-to "lists" model.prev}}&lsaquo;{{/link-to}}
+        {{#each model.paginacao as |num|}}
+            &nbsp;
+            {{#link-to "lists" num}}{{num}}{{/link-to}}
+            &nbsp;
+        {{/each}}
+        {{#link-to "lists" model.next}}&rsaquo;{{/link-to}}
+    </p>
+</div>
+
+
+

@@ -1,0 +1,34 @@
+<div class="modal-wrapper">
+    <div class="modal">
+        <h1>Detalhes</h1>
+        {{log model.comics.data.results}}
+        {{#each model.char.data.results as |char|}}
+            <div class="desc">
+                <figure class="desc-img">
+                    <img src="{{char.thumbnail.path}}.{{char.thumbnail.extension}}" alt="" width="100">
+                </figure>
+                <div class="desc-texto">
+                    <p><strong>{{char.name}}</strong></p>
+                    <p>{{char.description}}</p>
+                </div>
+            </div>
+        {{/each}}
+        {{#link-to "lists" class="modal-btn"}}Voltar{{/link-to}}
+         <hr>
+         <div class="fasciculos">
+            <h1>Fascículos</h1>
+            {{#each model.comics.data.results as |comic|}}
+                <div class="fasciculos-item">
+                    <p class="fasciculos-item-title"><strong>Título:</strong> {{comic.title}}</p>
+                    <p class="fasciculos-item-num-comic"><strong>Número da capa:</strong> {{comic.issueNumber}}</p>
+                    <div class="fasciculos-img">
+                        <figure>
+                            <img src="{{comic.thumbnail.path}}.{{comic.thumbnail.extension}}" alt="" width="100">
+                        </figure>
+                        <p>{{comic.description}}</p>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+</div>

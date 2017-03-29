@@ -1,0 +1,7 @@
+<h1 class="login-title">Dados de acesso</h1>
+
+<form id="form-login"  {{ action "acessar" model on="submit" }}>
+    {{ input value=model.private placeholder="private_key..." }}
+    {{ input value=model.public placeholder="public_key..." }}    
+    <input type="submit" value="Acessar" class="btn">
+</form>
